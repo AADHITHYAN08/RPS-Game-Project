@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="game.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="message">CHOSSE AN OPTION</div>
+    <div class="box">
+    <div class="container ">
+        
+                <div class="images">
+                    <div class="Computer">
+                        <img src="RockComputer.png" alt="Rock">
+                    </div>
+                    <div class="player">
+                        <img src="RockPlayer.png" alt="Rock">
+                    </div>
+                </div>
+                <div class="points">COMPUTER  <span class="computerpoint">  0  </span> /
+                    <span class="playerpoint">   0   </span>PLAYER
+                </div>
+                <div class="Choices">
+                   <button type="button">ROCK</button>
+                   <button type="button">PAPER</button>
+                   <button type="button">SCISSORS</button>
+                </div>
+    </div>
+    </div>
+
+    <script>
+        const Computer=document.querySelector(".Computer img");
+        const player=document.querySelector(".player img");
+
+const computerpoint=document.querySelector(".computerpoint");
+const playerpoint=document.querySelector(".playerpoint");
+const Choices=document.querySelectorAll(".Choices button");
+
+Choices.forEach((Choices) =>{
+    Choices.addEventListener("click", ()=> {
+    Computer.classList.add("shakecomputer");
+    player.classList.add("shakeplayer");
+    setTimeout(()=>{
+    Computer.classList.remove("shakecomputer");
+    player.classList.remove("shakeplayer");
+    player.src="./"+Choices.innerHTML+"player.png";
+    const Choice=["ROCK", "PAPER", "SCISSORS"];
+    let arrayNo=Math.floor(Math.random() * 3);
+    let computerchoice=Choice[arrayNo];
+    Computer.src="./"+ computerchoice +"Computer.png";
+    let cPoints=parseInt(computerpoint.innerHTML);
+    let pPoints=parseInt(playerpoint.innerHTML);
+    if(Choices.innerHTML==="ROCK")
+    {
+        if(computerchoice==="PAPER")
+        computerpoint.innerHTML=cPoints + 1;
+        else if(computerchoice==="SCISSORS")
+        playerpoint.innerHTML=pPoints + 1;
+        else if(Choices.innerHTML==="PAPER")
+        if(computerchoice==="SCISSORS")
+        computerchoice.innerHTML=cPoints + 1;
+        else if(computerchoice==="ROCK")
+        playerpoint.innerHTML=pPoints + 1;
+    }else {
+        if(computerchoice==="ROCK")
+        computerchoice.innerHTML=cPoints + 1;
+        else if(computerchoice==="PAPER")
+        playerpoint.innerHTML=pPoints + 1;
+    }
+    },800);
+    });
+});
+    </script>
+</body>
+</html>
