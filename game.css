@@ -4,6 +4,8 @@ body{
     background-image: url(bg4.jpg);
     background-size: cover;
     
+    
+    
 }
 .box{
     width: 590px;
@@ -12,8 +14,8 @@ body{
     margin-left: 27%;
 }
 .container{
-    
     height: 400px;
+    
     background: linear-gradient(rgba(27, 27, 27, 0.034), rgba(12, 12, 12, 0.068));
     color: black;
     margin-left: 2em;
@@ -28,8 +30,8 @@ body{
     margin-top: 3em;
     padding: 10px;
     background: linear-gradient(rgba(194, 9, 9, 0.918), rgb(230, 50, 77));
-    width: 20%;
-    color: linear-gradient(black, red);
+    width: 15%;
+    color: linear-gradient(rgba(0, 0, 0, 0.281), red);
     align-items: center;
     margin-left: 40%;
     border-radius: 20px;
@@ -125,4 +127,35 @@ width: 70%;
     100%{
         transform:rotate(0deg);
     }
+}
+@media screen and (max-width:600px) {
+    .container{
+         height: 400px;
+         width: 100%;
+    
+    /* background: linear-gradient(rgba(4, 64, 143, 0.774), rgba(77, 160, 9, 0.747)); */
+    background: linear-gradient(rgba(27, 27, 27, 0.034), rgba(12, 12, 12, 0.068));
+    color: black;
+    margin-right:9em;
+    align-items: center;
+    border-radius: 50px;
+    margin-top: 25%;
+    box-shadow: 10px 8px 8px solid rgb(7, 7, 7) ;
+    }
+  
+}
+@media screen and (max-width:600px){
+  .message{
+        padding: 10px;
+        width: 80%;
+        text-align: center;
+        margin-top: 25%;
+    }
+    body{
+        background-image: url(bg4.jpg);
+        object-fit: cover;
+
+        color: black;
+    }
+    
 }
